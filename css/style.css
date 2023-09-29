@@ -1,0 +1,36 @@
+body {
+  /* background-image: url("https://cdn.wallpapersafari.com/29/44/linm7I.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; */
+  height: 136vh;
+}
+#siteContainer {
+    background-image: url("https://cdn.wallpapersafari.com/29/44/linm7I.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  display: grid;
+  grid-template-columns: 1fr 3fr; /* Two columns: sidebar and main content */
+  grid-template-rows: 8% repeat(3, 1fr) 28% 8% ;/* Five rows of equal height and one for the footer */
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "sidebar main"
+    "sidebar main"
+    "sidebar main"
+    "footer footer";
+  height: 100%;
+}
+#siteHeader {
+  grid-area: header;
+  display: flex;
+  justify-content: center;
+  
+}
+#siteHeader h1 {
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  font-size: 40px;
+  font-weight: 800;
+  
+}
