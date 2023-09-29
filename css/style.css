@@ -5,12 +5,12 @@ body {
   height: 136vh;
 }
 #siteContainer {
-    background-image: url("https://cdn.wallpapersafari.com/29/44/linm7I.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url("https://cdn.wallpapersafari.com/29/44/linm7I.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   display: grid;
   grid-template-columns: 1fr 3fr; /* Two columns: sidebar and main content */
-  grid-template-rows: 8% repeat(3, 1fr) 28% 8% ;/* Five rows of equal height and one for the footer */
+  grid-template-rows: 8% repeat(3, 1fr) 28% 8%; /* Five rows of equal height and one for the footer */
   grid-template-areas:
     "header header"
     "sidebar main"
@@ -24,7 +24,6 @@ body {
   grid-area: header;
   display: flex;
   justify-content: center;
-  
 }
 #siteHeader h1 {
   color: white;
@@ -32,5 +31,13 @@ body {
   line-height: 40px;
   font-size: 40px;
   font-weight: 800;
-  
+}
+.like-dislike-container {
+  transform: scale(0.7);
+}
+.icons-box {
+  transform: scale(1.5);
+}
+#mainGrid {
+  display: flex;
 }
