@@ -1,0 +1,20 @@
+.main div {
+  color: white;
+  text-align: center;
+  width: 74%;
+  font-size: 1.9vw;
+  display: flex;
+  justify-content: space-between;
+}
+.main div input {
+  background-color: white;
+  border-radius: 5vw;
+  color: black;
+}
+#searchBtn {
+  border-radius: 1vw;
+  color: black;
+  background-color: white;
+  border: 1px solid gray;
+  padding: 5px;
+}

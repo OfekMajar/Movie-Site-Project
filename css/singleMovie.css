@@ -1,0 +1,51 @@
+.main div {
+  color: white;
+  text-align: center;
+  width: 100%;
+  font-size: 1.9vw;
+  display: flex;
+}
+#movieHeaderBox {
+  display: flex;
+  padding: 5vh 0 5vh 5vw;
+}
+#movieHeaderBox img {
+  width: 18vw;
+}
+#banner {
+  margin-top: 2vh;
+  background-color: gray;
+  height: calc(100% + 5vh);
+}
+#movieHeader {
+  padding-left: 30px;
+  width: 100%;
+}
+#movieFacts {
+  display: flex;
+}
+#movieTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+}
+#releaseDate {
+  width: fi;
+}
+#movieFacts {
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  width: max-content;
+}
+#movieFacts span {
+  width: fit-content;
+  height: fit-content;
+}
+#singleMovieMainGrid {
+  width: 100%;
+}
+.movieFactsSpan {
+  margin-right: 10px;
+}
