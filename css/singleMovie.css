@@ -52,6 +52,8 @@
 #movieNameAndYearBox {
   display: flex;
   gap: 10px;
+  font-size: 1.8vw;
+  font-weight: 600;
 }
 #releaseDate {
   width: fi;
@@ -81,8 +83,11 @@
   color: lightgray;
   font-size: 1vw;
 }
+#overviewHeader {
+  font-size: 1.6vw;
+}
 #overViewTextBox {
-  font-size: 1.8vw;
+  font-size: 1.4vw;
 }
 #directorList {
   display: flex;
@@ -93,9 +98,13 @@
   display: flex;
   flex-direction: column;
 }
+.directorName {
+  width: max-content;
+  border-top: 1px solid;
+}
 /* ! cast List */
 #castSectionBackground {
-  background: linear-gradient(to bottom, #070707,#5b5b5b);
+  background: linear-gradient(to bottom, #070707, #5b5b5b);
   height: max-content;
 }
 #castHeader {

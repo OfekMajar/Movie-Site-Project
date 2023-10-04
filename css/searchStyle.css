@@ -1,17 +1,19 @@
-.main div {
+#searchSection {
   color: white;
   text-align: center;
   width: 74%;
   font-size: 1.9vw;
   display: flex;
   justify-content: space-between;
+  padding-left: 2vw;
 }
-.main div input {
+#searchSection input {
   background-color: white;
   border-radius: 5vw;
   color: black;
+  width: 20vw;
 }
-#searchBtn {  
+#searchBtn {
   border-radius: 1vw;
   color: black;
   background-color: white;

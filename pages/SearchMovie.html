@@ -16,17 +16,24 @@
       <header id="siteHeader" class="header">
         <img
           id="siteLogo"
-          src="./assets/Images/movie-site-logo-removebg-preview.png"
+          src="../assets/Images/movie-site-logo-removebg-preview.png"
           alt="" />
       </header>
 
       <main class="main" id="mainGrid">
-        <div>
-          <label for="">Search for any movie you want! </label
-          ><input type="text" placeholder="Movie name" />
-          <button id="searchBtn">Search</button>
+        <div id="currentPopMoviesHeader">
+          <section id="searchSection">
+            <label for="">Search for any movie you want! </label
+            ><input
+              id="wantedMovieInput"
+              type="text"
+              placeholder="Movie name" />
+            <button id="searchBtn">Search</button>
+          </section>
         </div>
+
         <section id="cardBox"></section>
+        <div id="paginationBox"></div>
       </main>
       <section id="sidebar">
         <div id="home"><a href="../index.html">Home</a></div>
@@ -46,6 +53,6 @@
         </div>
       </footer>
     </div>
-    
+    <script src="../searchMovie.js"></script>
   </body>
 </html>

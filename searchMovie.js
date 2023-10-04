@@ -1,5 +1,6 @@
 const likesArray = [];
 const favoritesArray = [];
+let wantedMovie;
 let singleMovieId;
 let weekOrDayVar;
 //! Not nessecery
@@ -16,7 +17,7 @@ function pageLoader(added = 0) {
 </div>`;
 }
 pageLoader();
-function popularMovieFetcher(weekOrDay, page = 1) {
+function popularMovieFetcher(weekOrDay = "week", page = 1) {
   if (page < 1) {
     page = 1;
   }
@@ -36,7 +37,7 @@ function popularMovieFetcher(weekOrDay, page = 1) {
   )
     .then((response) => response.json())
     .then((data) => {
-      // ?console.log(data);
+      console.log(data);
       cardBox = document.getElementById("cardBox");
       data.results.forEach((item) => {
         document.getElementById("cardBox").innerHTML += cardMaker(
@@ -48,12 +49,57 @@ function popularMovieFetcher(weekOrDay, page = 1) {
         item.addEventListener("click", () => {
           singleMovieId = item.id;
           localStorage.setItem("wantedSingleMovie", singleMovieId);
-          window.location.href = "./pages/SingleMovie.html";
+          window.location.href = "./SingleMovie.html";
         });
       });
     })
     .catch((err) => console.error(err));
 }
+popularMovieFetcher();
+function wantedMovieFetcher(movieName, page = 1) {
+  if (page < 1) {
+    page = 1;
+  }
+  cardBox.innerHTML = "";
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNjNjNzViMWI2ZDUwMGNkMjgzZjU0MmU4ZTFlZDJkYSIsInN1YiI6IjVjMDNiNDQwMGUwYTI2NDg2YTA2ZjYwNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Pj6auQlw-VfPG6PenA6MbujH_SQk3Xr3LmD6H9WdH04",
+    },
+  };
+
+  fetch(
+    `https://api.themoviedb.org/3/search/movie?query=${movieName}&language=en-US&page=${page}`,
+    options
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      cardBox = document.getElementById("cardBox");
+      data.results.forEach((item) => {
+        document.getElementById("cardBox").innerHTML += cardMaker(
+          item.id,
+          item.poster_path
+        );
+      });
+      document.querySelectorAll(".favCardImgs").forEach((item) => {
+        item.addEventListener("click", () => {
+          singleMovieId = item.id;
+          localStorage.setItem("wantedSingleMovie", singleMovieId);
+          window.location.href = "./SingleMovie.html";
+        });
+      });
+    })
+    .catch((err) => console.error(err));
+}
+document.getElementById("searchBtn").addEventListener("click", () => {
+  wantedMovie = document.getElementById("wantedMovieInput").value;
+    wantedMovieFetcher(wantedMovie);
+  
+});
+
 
 const cardMaker = (id, posterUrl) => {
   return `
@@ -73,32 +119,6 @@ const cardMaker = (id, posterUrl) => {
           </div>
 `;
 };
-function updateDisplayMovies() {
-  switch (true) {
-    case document.getElementById("weeklyPopularMovies").checked: {
-      weekOrDayVar = "week";
-      popularMovieFetcher(weekOrDayVar);
-      likesChecker();
-      break;
-    }
-
-    case document.getElementById("dailyPopularMovies").checked:
-      {
-        weekOrDayVar = "day";
-        popularMovieFetcher(weekOrDayVar);
-        likesChecker();
-      }
-
-      break;
-  }
-}
-document
-  .getElementById("dailyPopularMovies")
-  .addEventListener("change", updateDisplayMovies);
-document
-  .getElementById("weeklyPopularMovies")
-  .addEventListener("change", updateDisplayMovies);
-updateDisplayMovies();
 //time out so site will load first
 function likesChecker() {
   setTimeout(() => {
@@ -147,7 +167,7 @@ function pagination() {
           item2.innerText = +item2.innerText - selectedPageIndex - 1;
         });
       }
-      popularMovieFetcher(weekOrDayVar, selectedPage);
+      wantedMovieFetcher(wantedMovie, selectedPage);
     });
   });
   document.getElementById("backToStart").addEventListener("click", () => {

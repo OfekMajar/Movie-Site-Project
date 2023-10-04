@@ -20,7 +20,7 @@ function singleMovieFetcher(id) {
       console.log(directors);
       let = directorsText = "";
       directors.forEach((item) => {
-        directorsText += `<li class="director"><span class="directorName">${item.name}</span> <span>${item.job}</span></li>`;
+        directorsText += `<li class="director"><span class="directorName">${item.name}</span> <span>• ${item.job}</span></li>`;
       });
       document.getElementById("directorList").innerHTML = directorsText;
       let currentActor = 0;
@@ -73,7 +73,7 @@ function singleMovieFetcher(id) {
         <span class="movieFactsSpan" id="releaseDate"> ${
           data.release_date
         } </span> 
-        <span class="movieFactsSpan" id="genres">•${genreMaker(
+        <span class="movieFactsSpan" id="genres">${genreMaker(
           data.genres
         )} </span> 
          <span class="movieFactsSpan" id="runTime"> ${runTimeCalc(
@@ -91,7 +91,7 @@ function singleMovieRenderer() {}
 function genreMaker(genreArray) {
   let text = "";
   genreArray.forEach((item) => {
-    text += `<span>${item.name} </span>`;
+    text += `<span>• ${item.name} </span>`;
   });
   return text;
 }
@@ -105,14 +105,11 @@ function runTimeCalc(time) {
 function actorMaker(actor, fromWhatActor = 0) {
   let actorCard = "";
   let btnLeftDisplayed = "hidden";
-  // if(fromWhatActor>0)btnLeftDisplayed="inline-block"
-  // document.getElementById("moveActorsLeft").style.display=btnLeftDisplayed
   if (fromWhatActor > 0) btnLeftDisplayed = "visible";
   document.getElementById("moveActorsLeft").style.visibility = btnLeftDisplayed;
   for (let i = fromWhatActor; i < fromWhatActor + 4; i++) {
-    //https://t3.ftcdn.net/jpg/03/53/11/00/360_F_353110097_nbpmfn9iHlxef4EDIhXB1tdTD0lcWhG9.jpg
     let profilePicExists = actor[i].profile_path == null;
-    //
+
     actorCard += ` <li class="actorCard">
   <img class="actorImg" src="${
     profilePicExists
