@@ -6,7 +6,7 @@ body {
   grid-template-columns: 0.5fr 3fr; /* Two columns: sidebar and main content */
   grid-template-rows: 10% repeat(5, 1fr) 6%; /* Five rows of equal height and one for the footer */
   grid-template-areas:
-    "header header"
+    "sidebar header"
     "sidebar main"
     "sidebar main"
     "sidebar main"
@@ -43,7 +43,7 @@ body {
 #currentPopMoviesHeader {
   display: flex;
 }
-#currentPopMoviesHeader input{
+#currentPopMoviesHeader input {
   width: 1vw;
 }
 #weeklyMoviesLable,
