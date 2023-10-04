@@ -10,27 +10,23 @@
     <script
       src="https://kit.fontawesome.com/83399efbd8.js"
       crossorigin="anonymous"></script>
-    <style>
-    
-    </style>
+    <style></style>
   </head>
   <body>
     <div id="siteContainer">
       <header id="siteHeader" class="header">
         <img
           id="siteLogo"
-          src="./assets/Images/movie-site-logo-removebg-preview.png"
+          src="../assets/Images/movie-site-logo-removebg-preview.png"
           alt="" />
       </header>
 
       <main class="main" id="singleMovieMainGrid">
-
         <section id="singleMovieBox">
           <section id="banner">
+            <div id="overlay"></div>
             <div id="movieHeaderBox">
-              <img id="singleMovieImg"
-                src=""
-                alt="" />
+              <img id="singleMovieImg" src="" alt="" />
               <div id="movieHeader">
                 <div id="movieTitle">
                   <div id="movieNameAndYearBox">
@@ -43,9 +39,21 @@
                     <span id="runTime"></span>
                   </div>
                 </div>
-                <div id="movieInfo"></div>
+                <div id="movieInfo">
+                  <h4 id="tagLine"></h4>
+                  <h4 id="overviewHeader">Overview</h4>
+                  <p id="overViewTextBox"></p>
+                  <ol id="directorList"></ol>
+                </div>
               </div>
             </div>
+          </section>
+          <section id="actorsSection">
+            <button id="moveActorsLeft"><i class="fa-solid fa-circle-left"></i> </button>
+            <ol id="actorsList">
+              
+            </ol>
+            <button id="moveActorsRight">  <i class="fa-solid fa-circle-right"></i> </button>
           </section>
         </section>
       </main>

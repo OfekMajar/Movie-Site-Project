@@ -1,14 +1,10 @@
 html,
 body {
-  height: 100%;
-}
-body {
 }
 #siteContainer {
-  
   display: grid;
   grid-template-columns: 0.5fr 3fr; /* Two columns: sidebar and main content */
-  grid-template-rows: 10% repeat(5, 1fr)  6%; /* Five rows of equal height and one for the footer */
+  grid-template-rows: 10% repeat(5, 1fr) 6%; /* Five rows of equal height and one for the footer */
   grid-template-areas:
     "header header"
     "sidebar main"
@@ -16,21 +12,15 @@ body {
     "sidebar main"
     "sidebar main"
     "sidebar main"
-    "footer footer";
+    "sidebar footer";
 }
+
 #siteHeader {
   grid-area: header;
   display: flex;
   justify-content: center;
   background-color: black;
 }
-/* #siteHeader h1 {
-  color: white;
-  text-align: center;
-  line-height: 40px;
-  font-size: 40px;
-  font-weight: 800;
-} */
 
 .main {
   grid-area: main;
@@ -38,24 +28,34 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  min-height: 160vh;
+  min-height: 170vh;
 }
 #mainGrid {
   display: flex;
   flex-direction: column;
 }
-.main h2{
+.main h2 {
   color: white;
   text-align: center;
   width: 74%;
   font-size: 1.9vw;
 }
+#currentPopMoviesHeader {
+  display: flex;
+}
+#currentPopMoviesHeader input{
+  width: 1vw;
+}
+#weeklyMoviesLable,
+#dailyMoviesLable {
+  color: white;
+  font-size: 1.3vw;
+}
+/* ! cards sec */
 .card {
   width: 18.5%;
   height: 10%;
-
 }
-
 #cardBox {
   color: black;
   display: flex;
@@ -63,6 +63,7 @@ body {
   justify-content: space-evenly;
   width: 75%;
 }
+/* ! likes Bos sec */
 .likesBox {
   display: flex;
   justify-content: space-evenly;
@@ -74,20 +75,18 @@ body {
   position: relative;
   transform: scale(0.7);
   z-index: 10;
-  
 }
-.favCardImgs:hover{
-cursor: pointer;
-transform: scale(0.8);
-z-index: 15;
+.favCardImgs:hover {
+  cursor: pointer;
+  transform: scale(0.8);
+  z-index: 15;
 }
-
 
 .likesBoxBorder {
   display: flex;
   justify-content: center;
   width: 75%;
-  border: 1px solid black;
+  border: 0.01vw solid black;
   border-radius: 10vw;
   background-color: #fff;
   position: absolute;
@@ -98,33 +97,49 @@ z-index: 15;
   bottom: 10%;
   font-size: 1vw;
 }
-#sidebar{
+/* ! pagination sec */
+#paginationBox {
+  display: flex;
+  justify-content: center;
+  width: 75%;
+}
+#pagination {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3vw;
+}
+.pageSelector:hover,
+#backToStart:hover,
+#morePages:hover {
+  cursor: pointer;
+  color: #850d85;
+}
+/* ! sidebar */
+#sidebar {
   grid-area: sidebar;
-  color:white;
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   background: linear-gradient(to bottom, #000000, #444444);
-
-
+  height: 100vh;
+  position: fixed;
+  width: calc(100% / 7);
 }
-#sidebar div{
-text-align: center;
+#sidebar div {
+  text-align: center;
   width: 10vw;
   height: 10vh;
   font-size: 2.3vw;
   font-weight: 600;
 }
-#sidebar div:hover{
+#sidebar div:hover {
   text-decoration: underline;
   cursor: pointer;
 }
-
-
-
-
-
+/* ! footer */
 .grid-footer {
   grid-area: footer;
   background: linear-gradient(
@@ -135,7 +150,6 @@ text-align: center;
     #87045b,
     #a9013b
   );
-
 }
 .grid-footer {
   display: grid;
@@ -162,8 +176,7 @@ text-align: center;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  border-left: 1px black solid;
-  border-right: 1px black solid;
+  border-left: 0.1vw black solid;
   height: 80%;
 }
 

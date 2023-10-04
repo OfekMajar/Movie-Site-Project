@@ -13,16 +13,28 @@
   <body>
     <div id="siteContainer">
       <header id="siteHeader" class="header">
-          <img
-            id="siteLogo"
-            src="./assets/Images/movie-site-logo-removebg-preview.png"
-            alt=""
-        />
+        <img
+          id="siteLogo"
+          src="./assets/Images/movie-site-logo-removebg-preview.png"
+          alt="" />
       </header>
 
       <main class="main" id="mainGrid">
-        <h2>Top 20 popular movies</h2>
+        <div id="currentPopMoviesHeader">
+          <h2>Trending movies</h2>
+          <input
+            type="radio"
+            name="WhatMoviesToShow"
+            id="weeklyPopularMovies"
+            checked />
+          <label id="weeklyMoviesLable" for="weeklyPopularMovies">Weekly</label>
+
+          <input type="radio" name="WhatMoviesToShow" id="dailyPopularMovies" />
+          <label id="dailyMoviesLable" for="dailyPopularMovies"> daily</label>
+        </div>
+
         <section id="cardBox"></section>
+        <div id="paginationBox"></div>
       </main>
       <section id="sidebar">
         <div id="home"><a href="index.html">Home</a></div>
