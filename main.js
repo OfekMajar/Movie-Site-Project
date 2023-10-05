@@ -1,6 +1,6 @@
 const favoritesArray = JSON.parse(localStorage.getItem("favMovies")) || [];
 let weekOrDayVar;
-localStorage.setItem("selectedPage",1)
+
 //! Not nessecery
 //TODO REMOVE LATER
 function pageLoader(added = 0) {
@@ -49,7 +49,7 @@ function popularMovieFetcher(weekOrDay, page = 1) {
           window.location.href = "./pages/SingleMovie.html";
         });
       });
-      likesChecker()
+      
     })
     .catch((err) => console.error(err));
 }
@@ -104,12 +104,14 @@ function likesChecker() {
     const likeButtons = document.querySelectorAll(".likesBoxBorder");
     likeButtons.forEach((item, index) => {
       let trueItemId = item.id.substring(item.id.indexOf("Id-") + 3);
+      console.log(item);
       if (favoritesArray.includes(trueItemId)) {
         item.lastElementChild.className = "fa-solid fa-thumbs-up";
       } else {
         item.lastElementChild.className = "fa-regular fa-thumbs-up";
       }
       item.addEventListener("click", () => {
+        
         let trueItemId = item.id.substring(item.id.indexOf("Id-") + 3);
         if (favoritesArray.includes(trueItemId)) {
           favoritesArray.splice(favoritesArray.indexOf(trueItemId), 1);
@@ -121,7 +123,7 @@ function likesChecker() {
         localStorage.setItem("favMovies", JSON.stringify(favoritesArray));
       });
     });
-  }, 100);
+  }, 300);
 }
 function pagination() {
   document.querySelectorAll(".pageSelector").forEach((item, index) => {
