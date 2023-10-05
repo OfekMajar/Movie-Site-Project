@@ -65,8 +65,12 @@ body {
 }
 /* ! likes Bos sec */
 .likesBox {
+  position: relative;
+  bottom: 10%;
+  font-size: 1vw;
+  height: max-content;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 .likesBox:hover {
   cursor: pointer;

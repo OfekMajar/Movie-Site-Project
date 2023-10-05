@@ -1,4 +1,6 @@
-const favoritesArray = JSON.parse(localStorage.getItem("favMovies")) || [];
+const likesArray = [];
+const favoritesArray = [];
+let singleMovieId;
 let weekOrDayVar;
 //! Not nessecery
 //TODO REMOVE LATER
@@ -34,6 +36,7 @@ function popularMovieFetcher(weekOrDay, page = 1) {
   )
     .then((response) => response.json())
     .then((data) => {
+      // ?console.log(data);
       cardBox = document.getElementById("cardBox");
       data.results.forEach((item) => {
         document.getElementById("cardBox").innerHTML += cardMaker(
@@ -43,7 +46,7 @@ function popularMovieFetcher(weekOrDay, page = 1) {
       });
       document.querySelectorAll(".favCardImgs").forEach((item) => {
         item.addEventListener("click", () => {
-          let singleMovieId = item.id;
+          singleMovieId = item.id;
           localStorage.setItem("wantedSingleMovie", singleMovieId);
           window.location.href = "./pages/SingleMovie.html";
         });
@@ -101,25 +104,28 @@ function likesChecker() {
   setTimeout(() => {
     const likeButtons = document.querySelectorAll(".likesBoxBorder");
     likeButtons.forEach((item, index) => {
-      let trueItemId = item.id.substring(item.id.indexOf("Id-") + 3);
-      if (favoritesArray.includes(trueItemId)) {
-        item.lastElementChild.className = "fa-solid fa-thumbs-up";
-      } else {
-        item.lastElementChild.className = "fa-regular fa-thumbs-up";
-      }
+      likesArray[index] = 1;
       item.addEventListener("click", () => {
+        likesArray[index]++;
         let trueItemId = item.id.substring(item.id.indexOf("Id-") + 3);
-        if (favoritesArray.includes(trueItemId)) {
-          favoritesArray.splice(favoritesArray.indexOf(trueItemId), 1);
-          item.lastElementChild.className = "fa-regular fa-thumbs-up";
-        } else {
-          favoritesArray.push(trueItemId);
+        if (checkIfLiked(likesArray[index])) {
           item.lastElementChild.className = "fa-solid fa-thumbs-up";
+
+          if (favoritesArray.includes(trueItemId)) {
+          } else {
+            favoritesArray.push(trueItemId);
+          }
+        } else {
+          item.lastElementChild.className = "fa-regular fa-thumbs-up";
+          if (favoritesArray.includes(trueItemId)) {
+            favoritesArray.splice(favoritesArray.indexOf(trueItemId), 1);
+          }
         }
         localStorage.setItem("favMovies", JSON.stringify(favoritesArray));
+        //?console.log(favoritesArray);
       });
     });
-  }, 100);
+  }, 700);
 }
 function pagination() {
   document.querySelectorAll(".pageSelector").forEach((item, index) => {
@@ -174,5 +180,8 @@ function pagination() {
 }
 
 pagination();
-
-
+document.getElementById("morePages").addEventListener("click", () => {});
+const checkIfLiked = (i) => {
+  if (i % 2 == 0) return true;
+  return false;
+};
