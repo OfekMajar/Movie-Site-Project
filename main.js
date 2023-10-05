@@ -1,5 +1,6 @@
 const favoritesArray = JSON.parse(localStorage.getItem("favMovies")) || [];
 let weekOrDayVar;
+localStorage.setItem("selectedPage",1)
 //! Not nessecery
 //TODO REMOVE LATER
 function pageLoader(added = 0) {
@@ -48,6 +49,7 @@ function popularMovieFetcher(weekOrDay, page = 1) {
           window.location.href = "./pages/SingleMovie.html";
         });
       });
+      likesChecker()
     })
     .catch((err) => console.error(err));
 }
@@ -74,7 +76,7 @@ function updateDisplayMovies() {
   switch (true) {
     case document.getElementById("weeklyPopularMovies").checked: {
       weekOrDayVar = "week";
-      popularMovieFetcher(weekOrDayVar);
+      popularMovieFetcher(weekOrDayVar,JSON.parse(localStorage.getItem("selectedPage")));
       likesChecker();
       break;
     }
@@ -82,7 +84,7 @@ function updateDisplayMovies() {
     case document.getElementById("dailyPopularMovies").checked:
       {
         weekOrDayVar = "day";
-        popularMovieFetcher(weekOrDayVar);
+      popularMovieFetcher(weekOrDayVar,JSON.parse(localStorage.getItem("selectedPage")));
         likesChecker();
       }
 
@@ -126,6 +128,7 @@ function pagination() {
     item.addEventListener("click", () => {
       let selectedPage = item.innerText;
       let selectedPageIndex = index;
+      localStorage.setItem("selectedPage",selectedPage)
       if (selectedPage <= 2) {
         document.getElementById("backToStart").style.display = "none";
       } else {
