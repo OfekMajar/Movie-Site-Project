@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="../css/Reset.css" />
     <link rel="stylesheet" href="../css/laptop-css/style.css" media="screen and (min-width:440px)" />
     <link rel="stylesheet" href="../css/mobile-css/style.css" media="screen and (max-width:440px)">
-    <link rel="stylesheet" href="../css/laptop-css/favorties.css" media="screen and (min-width:440px)" />
-    <link rel="stylesheet" href="../css/mobile-css/favorties.css" media="screen and (max-width:440px)">
     <script
       src="https://kit.fontawesome.com/83399efbd8.js"
       crossorigin="anonymous"></script>
@@ -18,24 +16,32 @@
       <header id="siteHeader" class="header">
         <img
           id="siteLogo"
-          src="../assets/Images/movie-site-logo-removebg-preview.png"
+          src="./assets/Images/movie-site-logo-removebg-preview.png"
           alt="" />
       </header>
-
+      <button type=""></button>
       <main class="main" id="mainGrid">
-        
-        <div id="favortieMoviesHeader">
-          <button id="prevPage" disabled> &laquo Previus page</button><h1>Favortie Movies</h1> <button id="nextPage">Next page &raquo
-          </button></div>
+        <div id="currentPopMoviesHeader">
+          <h2>Trending movies</h2>
+          <input
+            type="radio"
+            name="WhatMoviesToShow"
+            id="weeklyPopularMovies"
+            checked />
+          <label id="weeklyMoviesLable" for="weeklyPopularMovies">Weekly</label>
+
+          <input type="radio" name="WhatMoviesToShow" id="dailyPopularMovies" />
+          <label id="dailyMoviesLable" for="dailyPopularMovies"> daily</label>
+        </div>
 
         <section id="cardBox"></section>
         <div id="paginationBox"></div>
       </main>
       <section id="sidebar">
-        <div id="home"><a href="../index.html">Home</a></div>
-        <div id="search"><a href="#">Search</a></div>
-        <div id="favorites"><a href="favorites.html">Favorites</a></div>
-        <div id="about"><a href="about.html">About</a></div>
+        <div id="home"><a href="./home.html">Home</a></div>
+        <div id="search"><a href="./SearchMovie.html">Search</a></div>
+        <div id="favorites"><a href="./favorites.html">Favorites</a></div>
+        <div id="about"><a href="./about.html">About</a></div>
       </section>
       <footer class="grid-footer">
         <div class="footer-text"><span> My Socials:</span></div>
@@ -49,6 +55,6 @@
         </div>
       </footer>
     </div>
-    <script src="../js/favorites.js"></script>
+    <script src="../js/main.js"></script>
   </body>
 </html>

@@ -1,0 +1,32 @@
+#favortieMoviesHeader {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+  width: 90%;
+  align-items: center;
+}
+.main {
+  display: flex;
+  align-items: center;
+}
+.card {
+  width: 18.5%;
+  height: 10%;
+}
+#cardBox {
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 90%;
+  margin-left: auto;
+}
+#prevPage,
+#nextPage {
+  background-color: #ffffff;
+  border-radius: 10vw;
+  padding: 1vh;
+  color: black;
+}
+#prevPage{visibility: hidden}
