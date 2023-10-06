@@ -1,6 +1,10 @@
 const favoritesArray = JSON.parse(localStorage.getItem("favMovies")) || [];
 let weekOrDayVar;
-
+// console.log(65 -(20*3)- (65%20) - ((parseInt(65/20))-3)*20);
+// console.log((parseInt(65/20)-3)*20);
+let arrlen=50
+let test=3
+console.log(arrlen-((parseInt(arrlen/20)+1)-test));
 //! Not nessecery
 //TODO REMOVE LATER
 function pageLoader(added = 0) {
@@ -49,7 +53,6 @@ function popularMovieFetcher(weekOrDay, page = 1) {
           window.location.href = "./pages/SingleMovie.html";
         });
       });
-      
     })
     .catch((err) => console.error(err));
 }
@@ -100,11 +103,12 @@ document
 updateDisplayMovies();
 //time out so site will load first
 function likesChecker() {
+  //^ console.log(document.querySelectorAll(".likesBoxBorder"));
   setTimeout(() => {
     const likeButtons = document.querySelectorAll(".likesBoxBorder");
     likeButtons.forEach((item, index) => {
       let trueItemId = item.id.substring(item.id.indexOf("Id-") + 3);
-      console.log(item);
+      //^ console.log(item);
       if (favoritesArray.includes(trueItemId)) {
         item.lastElementChild.className = "fa-solid fa-thumbs-up";
       } else {
@@ -113,6 +117,7 @@ function likesChecker() {
       item.addEventListener("click", () => {
         
         let trueItemId = item.id.substring(item.id.indexOf("Id-") + 3);
+        
         if (favoritesArray.includes(trueItemId)) {
           favoritesArray.splice(favoritesArray.indexOf(trueItemId), 1);
           item.lastElementChild.className = "fa-regular fa-thumbs-up";
@@ -123,7 +128,7 @@ function likesChecker() {
         localStorage.setItem("favMovies", JSON.stringify(favoritesArray));
       });
     });
-  }, 300);
+  }, 100);
 }
 function pagination() {
   document.querySelectorAll(".pageSelector").forEach((item, index) => {
@@ -146,7 +151,7 @@ function pagination() {
           item2.innerText = +item2.innerText - selectedPageIndex - 1;
         });
       }
-      popularMovieFetcher(weekOrDayVar, selectedPage);
+      updateDisplayMovies();
     });
   });
   document.getElementById("backToStart").addEventListener("click", () => {
