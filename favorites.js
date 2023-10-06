@@ -21,6 +21,11 @@ function favMoviesFetcher(page = 1) {
     }
 
    
+    if(favoritesArray.length<=20){
+      document.getElementById("nextPage").disabled=true
+      document.getElementById("nextPage").style.visibility="hidden"
+    }
+
     for (let index = (page - 1) * 20; index < maxCards; index++) {
       fetch(
         `https://api.themoviedb.org/3/movie/${favoritesArray[index]}?language=en-US`,
@@ -34,6 +39,15 @@ function favMoviesFetcher(page = 1) {
             data.poster_path
           );
 
+          document.querySelectorAll(".likesBoxBorder").forEach(item=>{
+            item.addEventListener("click",()=>{
+              console.log(item.id);
+              let trueItemId = item.id.substring(item.id.indexOf("Id-") + 3);
+              favoritesArray.splice(favoritesArray.indexOf(trueItemId), 1);
+              localStorage.setItem("favMovies", JSON.stringify(favoritesArray));
+            favMoviesFetcher(currentFavPage);
+            })
+          })
           document.querySelectorAll(".favCardImgs").forEach((item) => {
             item.addEventListener("click", () => {
               let singleMovieId = data.id;
@@ -47,10 +61,6 @@ function favMoviesFetcher(page = 1) {
   }
 }
 favMoviesFetcher();
-if(favoritesArray.length<20){
-  document.getElementById("nextPage").disabled=true
-  document.getElementById("nextPage").style.visibility="hidden"
-}
 document.getElementById("nextPage").addEventListener("click",()=>{
 if((currentFavPage )>=parseInt(favoritesArray.length/20)){
   document.getElementById("nextPage").disabled=true
@@ -89,3 +99,12 @@ const cardMaker = (id, posterUrl) => {
             </div>
   `;
 };
+
+document.querySelectorAll(".likesBoxBorder").forEach(item=>{
+  item.addEventListener("click",()=>{
+let trueItemId=item.id
+    favoritesArray.splice(favoritesArray.indexOf(trueItemId), 1);
+    localStorage.setItem("favMovies", JSON.stringify(favoritesArray));
+  favMoviesFetcher(currentFavPage);
+  })
+})

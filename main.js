@@ -1,5 +1,6 @@
 const favoritesArray = JSON.parse(localStorage.getItem("favMovies")) || [];
 let weekOrDayVar;
+
 // console.log(65 -(20*3)- (65%20) - ((parseInt(65/20))-3)*20);
 // console.log((parseInt(65/20)-3)*20);
 let arrlen=50
@@ -103,12 +104,10 @@ document
 updateDisplayMovies();
 //time out so site will load first
 function likesChecker() {
-  //^ console.log(document.querySelectorAll(".likesBoxBorder"));
   setTimeout(() => {
     const likeButtons = document.querySelectorAll(".likesBoxBorder");
     likeButtons.forEach((item, index) => {
       let trueItemId = item.id.substring(item.id.indexOf("Id-") + 3);
-      //^ console.log(item);
       if (favoritesArray.includes(trueItemId)) {
         item.lastElementChild.className = "fa-solid fa-thumbs-up";
       } else {
