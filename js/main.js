@@ -1,11 +1,5 @@
 const favoritesArray = JSON.parse(localStorage.getItem("favMovies")) || [];
 let weekOrDayVar;
-
-// console.log(65 -(20*3)- (65%20) - ((parseInt(65/20))-3)*20);
-// console.log((parseInt(65/20)-3)*20);
-let arrlen=50
-let test=3
-console.log(arrlen-((parseInt(arrlen/20)+1)-test));
 //! Not nessecery
 //TODO REMOVE LATER
 function pageLoader(added = 0) {
@@ -51,7 +45,7 @@ function popularMovieFetcher(weekOrDay, page = 1) {
         item.addEventListener("click", () => {
           let singleMovieId = item.id;
           localStorage.setItem("wantedSingleMovie", singleMovieId);
-          window.location.href = "./pages/SingleMovie.html";
+          window.location.href = "./SingleMovie.html";
         });
       });
     })

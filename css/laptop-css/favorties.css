@@ -6,22 +6,11 @@
   width: 90%;
   align-items: center;
 }
-.main {
-  display: flex;
-  align-items: center;
-}
 .card {
   width: 18.5%;
   height: 10%;
 }
-#cardBox {
-  color: black;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  width: 90%;
-  margin-left: auto;
-}
+
 #prevPage,
 #nextPage {
   background-color: #ffffff;

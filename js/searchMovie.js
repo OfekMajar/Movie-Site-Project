@@ -1,5 +1,5 @@
 const likesArray = [];
-const favoritesArray = [];
+const favoritesArray = JSON.parse(localStorage.getItem("favMovies")) || [];
 let wantedMovie;
 let singleMovieId;
 let weekOrDayVar;
@@ -124,28 +124,26 @@ function likesChecker() {
   setTimeout(() => {
     const likeButtons = document.querySelectorAll(".likesBoxBorder");
     likeButtons.forEach((item, index) => {
-      likesArray[index] = 1;
+      let trueItemId = item.id.substring(item.id.indexOf("Id-") + 3);
+      if (favoritesArray.includes(trueItemId)) {
+        item.lastElementChild.className = "fa-solid fa-thumbs-up";
+      } else {
+        item.lastElementChild.className = "fa-regular fa-thumbs-up";
+      }
       item.addEventListener("click", () => {
-        likesArray[index]++;
+        
         let trueItemId = item.id.substring(item.id.indexOf("Id-") + 3);
-        if (checkIfLiked(likesArray[index])) {
-          item.lastElementChild.className = "fa-solid fa-thumbs-up";
-
-          if (favoritesArray.includes(trueItemId)) {
-          } else {
-            favoritesArray.push(trueItemId);
-          }
-        } else {
+        if (favoritesArray.includes(trueItemId)) {
+          favoritesArray.splice(favoritesArray.indexOf(trueItemId), 1);
           item.lastElementChild.className = "fa-regular fa-thumbs-up";
-          if (favoritesArray.includes(trueItemId)) {
-            favoritesArray.splice(favoritesArray.indexOf(trueItemId), 1);
-          }
+        } else {
+          favoritesArray.push(trueItemId);
+          item.lastElementChild.className = "fa-solid fa-thumbs-up";
         }
         localStorage.setItem("favMovies", JSON.stringify(favoritesArray));
-        //? console.log(favoritesArray);
       });
     });
-  }, 700);
+  }, 100);
 }
 function pagination() {
   document.querySelectorAll(".pageSelector").forEach((item, index) => {
@@ -176,6 +174,7 @@ function pagination() {
       document.getElementById("backToStart").style.display = "none";
     });
   });
+  likesChecker()
   //TODO get back fixing the 3 dots maxing out at 500 pages problem
   //!
   document.getElementById("morePages").addEventListener("click", () => {
