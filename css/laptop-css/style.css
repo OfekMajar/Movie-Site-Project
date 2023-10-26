@@ -76,7 +76,6 @@ img {
   display: flex;
   justify-content: center;
   width: 12vw;
-
 }
 .likesBox:hover {
   cursor: pointer;
@@ -153,16 +152,37 @@ img {
 /* ! footer */
 .grid-footer {
   grid-area: footer;
-  background: linear-gradient(
-    to right,
-    #0b1033,
-    #440a67,
-    #6a0572,
-    #87045b,
-    #a9013b
-  );
 }
-.grid-footer {
+
+#linksContainer {
+  background-color: rgb(31, 28, 28);
+  height: 65%;
+  display: flex;
+  justify-content: space-evenly;
+  color: white;
+  align-items: center;
+}
+.linkBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(1.7);
+}
+.linkBox:hover :only-child {
+  cursor: pointer;
+}
+#copyrightBox {
+  background-color: rgb(21, 19, 19);
+  color: white;
+  height: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text-white {
+  margin-left: 0.7vw;
+}
+/* .grid-footer {
   display: grid;
   grid-template-columns: 30% 70%;
   grid-template-areas: "text links";
@@ -196,26 +216,4 @@ img {
 }
 .linkedin {
   background-image: url(https://www.freepnglogos.com/uploads/linkedin-basic-round-social-logo-png-13.png);
-}
-/* ! popup msg */
-.popup-message {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 20px;
-  text-align: center;
-  border-radius: 5px;
-}
-
-#closePopup {
-  background-color: #ff5733;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin-top: 10px;
-  cursor: pointer;
-}
+} */
