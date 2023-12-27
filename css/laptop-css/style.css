@@ -148,7 +148,7 @@ img {
   cursor: pointer;
 }
 #phoneSidebar,
-#sidebarBtn {
+.sidebarBtn {
   display: none;
 }
 /* ! footer */
