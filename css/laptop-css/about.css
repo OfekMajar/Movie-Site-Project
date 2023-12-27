@@ -36,6 +36,7 @@ body {
   padding: 15px 5px 0px 10px;
   border-right: 3px dotted lightgray;
   line-height: 20px;
+  font-weight: 500;
 }
 
 @keyframes typing {

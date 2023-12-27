@@ -1,5 +1,5 @@
 .main {
-  min-height: 80vh;
+  min-height: 100vh;
 }
 #favortieMoviesHeader {
   color: white;
@@ -20,6 +20,10 @@
   border-radius: 10vw;
   padding: 1vh;
   color: black;
+}
+#prevPage:hover,
+#nextPage:hover {
+  cursor: pointer;
 }
 #prevPage {
   visibility: hidden;
