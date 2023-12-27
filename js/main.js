@@ -74,7 +74,10 @@ function updateDisplayMovies() {
   switch (true) {
     case document.getElementById("weeklyPopularMovies").checked: {
       weekOrDayVar = "week";
-      popularMovieFetcher(weekOrDayVar,JSON.parse(localStorage.getItem("selectedPage")));
+      popularMovieFetcher(
+        weekOrDayVar,
+        JSON.parse(localStorage.getItem("selectedPage"))
+      );
       likesChecker();
       break;
     }
@@ -82,7 +85,10 @@ function updateDisplayMovies() {
     case document.getElementById("dailyPopularMovies").checked:
       {
         weekOrDayVar = "day";
-      popularMovieFetcher(weekOrDayVar,JSON.parse(localStorage.getItem("selectedPage")));
+        popularMovieFetcher(
+          weekOrDayVar,
+          JSON.parse(localStorage.getItem("selectedPage"))
+        );
         likesChecker();
       }
 
@@ -108,9 +114,8 @@ function likesChecker() {
         item.lastElementChild.className = "fa-regular fa-thumbs-up";
       }
       item.addEventListener("click", () => {
-        
         let trueItemId = item.id.substring(item.id.indexOf("Id-") + 3);
-        
+
         if (favoritesArray.includes(trueItemId)) {
           favoritesArray.splice(favoritesArray.indexOf(trueItemId), 1);
           item.lastElementChild.className = "fa-regular fa-thumbs-up";
@@ -128,7 +133,7 @@ function pagination() {
     item.addEventListener("click", () => {
       let selectedPage = item.innerText;
       let selectedPageIndex = index;
-      localStorage.setItem("selectedPage",selectedPage)
+      localStorage.setItem("selectedPage", selectedPage);
       if (selectedPage <= 2) {
         document.getElementById("backToStart").style.display = "none";
       } else {
@@ -177,5 +182,34 @@ function pagination() {
 }
 
 pagination();
+//^phone js section !//
+//~Siderbar section ~//
 
-
+document.getElementById("openSidebarBtn").addEventListener("click", () => {
+  openTheSidebar();
+});
+document.getElementById("closeSidebarBtn").addEventListener("click", () => {
+  closeTheSidebar();
+});
+function openTheSidebar() {
+  document.getElementById("siteContainer").style.gridTemplateAreas = `
+  "sidebar header"
+    "sidebar main"
+    "sidebar main"
+    "sidebar main"
+    "sidebar main"
+    "footer footer"
+  `;
+  document.getElementById("sidebar").style.visibility = "visible";
+}
+function closeTheSidebar() {
+  document.getElementById("sidebar").style.visibility = "hidden";
+  document.getElementById("siteContainer").style.gridTemplateAreas = `
+  "sidebar header"
+  "main main"
+  "main main"
+  "main main"
+  "main main"
+  "footer footer"
+  `;
+}

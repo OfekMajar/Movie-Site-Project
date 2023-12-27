@@ -147,6 +147,10 @@ img {
   text-decoration: underline;
   cursor: pointer;
 }
+#phoneSidebar,
+#sidebarBtn {
+  display: none;
+}
 /* ! footer */
 .grid-footer {
   grid-area: footer;
@@ -183,5 +187,3 @@ img {
   margin-left: 0.7vw;
 }
 /* the icons */
-.fa-brands {
-}
