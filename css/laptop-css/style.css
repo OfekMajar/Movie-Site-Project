@@ -3,8 +3,8 @@ body {
 }
 #siteContainer {
   display: grid;
-  grid-template-columns: 0.5fr 3fr; /* Two columns: sidebar and main content */
-  grid-template-rows: 10% repeat(5, 1fr) 6%; /* Five rows of equal height and one for the footer */
+  grid-template-columns: 0.5fr 3fr;
+  grid-template-rows: 10% repeat(5, 1fr) 6%;
   grid-template-areas:
     "sidebar header"
     "sidebar main"
@@ -170,6 +170,7 @@ img {
 }
 .linkBox:hover :only-child {
   cursor: pointer;
+  transform: scale(1.2);
 }
 #copyrightBox {
   background-color: rgb(21, 19, 19);
@@ -182,38 +183,3 @@ img {
 .text-white {
   margin-left: 0.7vw;
 }
-/* .grid-footer {
-  display: grid;
-  grid-template-columns: 30% 70%;
-  grid-template-areas: "text links";
-}
-.footer-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 3vw;
-}
-.footer-links {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-.github,
-.facebook,
-.linkedin {
-  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png);
-  width: 100%;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-left: 0.1vw black solid;
-  height: 80%;
-}
-
-.facebook {
-  background-image: url(https://img.freepik.com/free-icon/facebook_318-194827.jpg);
-}
-.linkedin {
-  background-image: url(https://www.freepnglogos.com/uploads/linkedin-basic-round-social-logo-png-13.png);
-} */

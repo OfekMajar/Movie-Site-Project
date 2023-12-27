@@ -3,16 +3,19 @@ body {
 }
 #siteContainer {
   display: grid;
-  grid-template-columns: 0.5fr 3fr; /* Two columns: sidebar and main content */
-  grid-template-rows: 10% repeat(5, 1fr) 6%; /* Five rows of equal height and one for the footer */
+  /* grid-template-columns: 0.5fr 3fr; */
+  grid-template-rows: 10% repeat(5, 1fr) 6%;
   grid-template-areas:
-    "sidebar header"
-    "sidebar main"
-    "sidebar main"
-    "sidebar main"
-    "sidebar main"
-    "sidebar main"
-    "sidebar footer";
+   
+    "header"
+    "main"
+    "main"
+    "main"
+    "main"
+    "main"
+    "footer"
+    
+    
 }
 img {
   color: white;
@@ -127,7 +130,7 @@ img {
 }
 /* ! sidebar */
 #sidebar {
-  grid-area: sidebar;
+  /* grid-area: sidebar; */
   color: white;
   display: flex;
   flex-direction: column;
@@ -137,6 +140,7 @@ img {
   height: 100vh;
   position: fixed;
   width: calc(100% / 7);
+  position: relative;
 }
 #sidebar div {
   text-align: center;
@@ -152,69 +156,34 @@ img {
 /* ! footer */
 .grid-footer {
   grid-area: footer;
-  background: linear-gradient(
-    to right,
-    #0b1033,
-    #440a67,
-    #6a0572,
-    #87045b,
-    #a9013b
-  );
 }
-.grid-footer {
-  display: grid;
-  grid-template-columns: 30% 70%;
-  grid-template-areas: "text links";
+
+#linksContainer {
+  background-color: rgb(31, 28, 28);
+  height: 65%;
+  display: flex;
+  justify-content: space-evenly;
+  color: white;
+  align-items: center;
 }
-.footer-text {
+.linkBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(1.7);
+}
+.linkBox:hover :only-child {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+#copyrightBox {
+  background-color: rgb(21, 19, 19);
+  color: white;
+  height: 35%;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  font-size: 3vw;
 }
-.footer-links {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-.github,
-.facebook,
-.linkedin {
-  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png);
-  width: 100%;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-left: 0.1vw black solid;
-  height: 80%;
-}
-
-.facebook {
-  background-image: url(https://img.freepik.com/free-icon/facebook_318-194827.jpg);
-}
-.linkedin {
-  background-image: url(https://www.freepnglogos.com/uploads/linkedin-basic-round-social-logo-png-13.png);
-}
-/* ! popup msg */
-.popup-message {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 20px;
-  text-align: center;
-  border-radius: 5px;
-}
-
-#closePopup {
-  background-color: #ff5733;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin-top: 10px;
-  cursor: pointer;
+.text-white {
+  margin-left: 0.7vw;
 }
