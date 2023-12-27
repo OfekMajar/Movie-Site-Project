@@ -1,22 +1,21 @@
-html,
-body {
-}
+
 #siteContainer {
   display: grid;
   grid-template-columns: 0.5fr 3fr;
-  grid-template-rows: 10% repeat(5, 1fr) 6%;
+  grid-template-rows: 11vh repeat(4, 1fr) 9vh;
   grid-template-areas:
     "sidebar header"
     "sidebar main"
     "sidebar main"
     "sidebar main"
     "sidebar main"
-    "sidebar main"
     "sidebar footer";
+  height: 100%;
 }
 img {
   color: white;
 }
+
 #siteHeader {
   grid-area: header;
   display: flex;
@@ -152,6 +151,7 @@ img {
 /* ! footer */
 .grid-footer {
   grid-area: footer;
+  
 }
 
 #linksContainer {
@@ -166,11 +166,11 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: scale(1.7);
+ 
 }
 .linkBox:hover :only-child {
   cursor: pointer;
-  transform: scale(1.2);
+  transform: scale(1.5);
 }
 #copyrightBox {
   background-color: rgb(21, 19, 19);
@@ -182,4 +182,8 @@ img {
 }
 .text-white {
   margin-left: 0.7vw;
+}
+/* the icons */
+.fa-brands{
+
 }

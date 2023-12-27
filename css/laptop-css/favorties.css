@@ -1,3 +1,6 @@
+.main {
+  min-height: 80vh;
+}
 #favortieMoviesHeader {
   color: white;
   display: flex;
@@ -18,4 +21,6 @@
   padding: 1vh;
   color: black;
 }
-#prevPage{visibility: hidden}
+#prevPage {
+  visibility: hidden;
+}

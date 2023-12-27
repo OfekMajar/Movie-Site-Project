@@ -1,6 +1,6 @@
 const favoritesArray = JSON.parse(localStorage.getItem("favMovies")) || [];
 let maxCards;
-let currentFavPage=1;
+let currentFavPage = 1;
 function favMoviesFetcher(page = 1) {
   if (page < 1) {
     page = 1;
@@ -15,15 +15,14 @@ function favMoviesFetcher(page = 1) {
     },
   };
   if (favoritesArray.length > 0) {
-    let maxCards=page*20
-    if (parseInt(favoritesArray.length/20)+1 ==page){
-      maxCards=favoritesArray.length
+    let maxCards = page * 20;
+    if (parseInt(favoritesArray.length / 20) + 1 == page) {
+      maxCards = favoritesArray.length;
     }
 
-   
-    if(favoritesArray.length<=20){
-      document.getElementById("nextPage").disabled=true
-      document.getElementById("nextPage").style.visibility="hidden"
+    if (favoritesArray.length <= 20) {
+      document.getElementById("nextPage").disabled = true;
+      document.getElementById("nextPage").style.visibility = "hidden";
     }
 
     for (let index = (page - 1) * 20; index < maxCards; index++) {
@@ -33,21 +32,20 @@ function favMoviesFetcher(page = 1) {
       )
         .then((response) => response.json())
         .then((data) => {
-          // console.log(data);
           document.getElementById("cardBox").innerHTML += cardMaker(
             data.id,
             data.poster_path
           );
 
-          document.querySelectorAll(".likesBoxBorder").forEach(item=>{
-            item.addEventListener("click",()=>{
+          document.querySelectorAll(".likesBoxBorder").forEach((item) => {
+            item.addEventListener("click", () => {
               console.log(item.id);
               let trueItemId = item.id.substring(item.id.indexOf("Id-") + 3);
               favoritesArray.splice(favoritesArray.indexOf(trueItemId), 1);
               localStorage.setItem("favMovies", JSON.stringify(favoritesArray));
-            favMoviesFetcher(currentFavPage);
-            })
-          })
+              favMoviesFetcher(currentFavPage);
+            });
+          });
           document.querySelectorAll(".favCardImgs").forEach((item) => {
             item.addEventListener("click", () => {
               let singleMovieId = data.id;
@@ -61,26 +59,30 @@ function favMoviesFetcher(page = 1) {
   }
 }
 favMoviesFetcher();
-document.getElementById("nextPage").addEventListener("click",()=>{
-if((currentFavPage )>=parseInt(favoritesArray.length/20)){
-  document.getElementById("nextPage").disabled=true
-  document.getElementById("nextPage").style.visibility="hidden"
+if (favoritesArray.length == 0) {
+  document.getElementById("nextPage").disabled = true;
+  document.getElementById("nextPage").style.visibility = "hidden";
 }
+document.getElementById("nextPage").addEventListener("click", () => {
+  if (currentFavPage >= parseInt(favoritesArray.length / 20)) {
+    document.getElementById("nextPage").disabled = true;
+    document.getElementById("nextPage").style.visibility = "hidden";
+  }
   currentFavPage++;
-  document.getElementById("prevPage").disabled=false
-  document.getElementById("prevPage").style.visibility="visible"
+  document.getElementById("prevPage").disabled = false;
+  document.getElementById("prevPage").style.visibility = "visible";
   favMoviesFetcher(currentFavPage);
-})
-document.getElementById("prevPage").addEventListener("click",()=>{
-  document.getElementById("nextPage").disabled=false
-  document.getElementById("nextPage").style.visibility="visible"
-  if(currentFavPage-1<=1){
-    document.getElementById("prevPage").disabled=true
-  document.getElementById("prevPage").style.visibility="hidden"
+});
+document.getElementById("prevPage").addEventListener("click", () => {
+  document.getElementById("nextPage").disabled = false;
+  document.getElementById("nextPage").style.visibility = "visible";
+  if (currentFavPage - 1 <= 1) {
+    document.getElementById("prevPage").disabled = true;
+    document.getElementById("prevPage").style.visibility = "hidden";
   }
   currentFavPage--;
   favMoviesFetcher(currentFavPage);
-})
+});
 const cardMaker = (id, posterUrl) => {
   return `
   <div class="card">
@@ -100,11 +102,11 @@ const cardMaker = (id, posterUrl) => {
   `;
 };
 
-document.querySelectorAll(".likesBoxBorder").forEach(item=>{
-  item.addEventListener("click",()=>{
-let trueItemId=item.id
+document.querySelectorAll(".likesBoxBorder").forEach((item) => {
+  item.addEventListener("click", () => {
+    let trueItemId = item.id;
     favoritesArray.splice(favoritesArray.indexOf(trueItemId), 1);
     localStorage.setItem("favMovies", JSON.stringify(favoritesArray));
-  favMoviesFetcher(currentFavPage);
-  })
-})
+    favMoviesFetcher(currentFavPage);
+  });
+});

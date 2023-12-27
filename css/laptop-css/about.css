@@ -1,6 +1,8 @@
+body {
+}
 .main {
   background-image: none;
-  height: 100vh
+  min-height: 80vh;
 }
 #aboutUsHeader {
   align-self: flex-start;
@@ -10,17 +12,37 @@
   justify-content: center;
 }
 #aboutBanner {
-  height: 300px;
+  height: 200px;
   background-image: url(../../assets/Images/aboutBanner.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  width: 900px;
+  width: 600px;
 }
 #aboutBanner h2 {
-  height: fit-content;
-  width: 100%;
   font-weight: 600;
   font-size: 40px;
   margin-top: 40px;
+  animation: typing 3s steps(40) forwards; /* 3 seconds typing animation */
+}
+
+#aboutBox {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  grid-template-areas: "paragraph image";
+  height: 100%;
+}
+#aboutPara {
+  padding: 15px 5px 0px 10px;
+  border-right: 3px dotted lightgray;
+  line-height: 20px;
+}
+
+@keyframes typing {
+  from {
+    width: 40%;
+  }
+  to {
+    width: 100%;
+  }
 }
