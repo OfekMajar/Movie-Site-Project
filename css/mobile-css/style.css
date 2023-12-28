@@ -1,3 +1,6 @@
+body {
+  background-color: rgb(21, 19, 19);
+}
 #siteContainer {
   display: grid;
   grid-template-columns: 10% 90%;
@@ -40,23 +43,24 @@ img {
   color: white;
   text-align: center;
   width: 74%;
-  font-size: 1.9vw;
+  font-size: 3.5vh;
 }
 #currentPopMoviesHeader {
   display: flex;
 }
 #currentPopMoviesHeader input {
-  width: 1vw;
+  width: 4vh;
+  margin-left: 4vw;
 }
 #weeklyMoviesLable,
 #dailyMoviesLable {
   color: white;
-  font-size: 1.3vw;
+  font-size: 3vh;
 }
 /* ^ cards sec */
 .card {
-  width: 15vw;
-  height: 10%;
+  width: 25vw;
+  height: fit-content;
 }
 #cardBox {
   color: black;
@@ -74,7 +78,7 @@ img {
   height: max-content;
   display: flex;
   justify-content: center;
-  width: 12vw;
+  width: 25vw;
 }
 .likesBox:hover {
   cursor: pointer;
@@ -82,7 +86,7 @@ img {
 .favCardImgs {
   position: relative;
   transform: scale(0.7);
-  width: 12vw;
+  width: 25vw;
   z-index: 10;
 }
 .favCardImgs:hover {
@@ -95,7 +99,7 @@ img {
   display: flex;
   justify-content: center;
   width: 75%;
-  border: 0.01vw solid black;
+  border: 0.05vw solid black;
   border-radius: 10vw;
   background-color: #fff;
   position: absolute;
@@ -104,19 +108,21 @@ img {
 .likesBox {
   position: relative;
   bottom: 10%;
-  font-size: 1vw;
+  font-size: 2.5vh;
 }
 /* ^ pagination sec */
 #paginationBox {
   display: flex;
   justify-content: center;
   width: 75%;
+  margin: 1.5vh 0 1.5vh 0;
 }
 #pagination {
   width: 20%;
   display: flex;
   justify-content: space-between;
-  font-size: 1.3vw;
+  font-size: 4.5vh;
+  gap: 1vw;
 }
 .pageSelector:hover,
 #backToStart:hover,
