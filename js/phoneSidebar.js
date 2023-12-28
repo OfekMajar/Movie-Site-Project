@@ -11,7 +11,7 @@ function openTheSidebar() {
         "sidebar main"
         "sidebar main"
         "sidebar main"
-        "footer footer"
+        "sidebar footer"
       `;
   document.getElementById("sidebar").style.visibility = "visible";
 }

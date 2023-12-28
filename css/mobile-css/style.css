@@ -3,7 +3,7 @@ body {
 }
 #siteContainer {
   display: grid;
-  grid-template-columns: 10% 90%;
+  grid-template-columns: 18% 82%;
   grid-template-rows: 7vh repeat(4, 1fr) 9vh;
   grid-template-areas:
     "sidebar header"
@@ -43,7 +43,7 @@ img {
   color: white;
   text-align: center;
   width: 74%;
-  font-size: 3.5vh;
+  font-size: 24px;
 }
 #currentPopMoviesHeader {
   display: flex;
@@ -59,18 +59,18 @@ img {
 }
 /* ^ cards sec */
 .card {
-  width: 25vw;
+  width: 34vw;
   height: fit-content;
 }
 #cardBox {
   color: black;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   width: 90%;
   margin-left: auto;
 }
-/* ^ likes Bos sec */
+/* ^ likes Box section */
 .likesBox {
   position: relative;
   bottom: 10%;
@@ -78,7 +78,7 @@ img {
   height: max-content;
   display: flex;
   justify-content: center;
-  width: 25vw;
+  width: 22vw;
 }
 .likesBox:hover {
   cursor: pointer;
@@ -86,7 +86,7 @@ img {
 .favCardImgs {
   position: relative;
   transform: scale(0.7);
-  width: 25vw;
+  width: 22vw;
   z-index: 10;
 }
 .favCardImgs:hover {
@@ -108,13 +108,13 @@ img {
 .likesBox {
   position: relative;
   bottom: 10%;
-  font-size: 2.5vh;
+  font-size: 15px;
 }
 /* ^ pagination sec */
 #paginationBox {
   display: flex;
-  justify-content: center;
-  width: 75%;
+  justify-content: flex-start;
+
   margin: 1.5vh 0 1.5vh 0;
 }
 #pagination {
@@ -140,9 +140,9 @@ img {
   align-items: center;
   justify-content: space-around;
   background: linear-gradient(to bottom, #000000, #444444);
-  height: 100vh;
+  min-height: 100vh;
   position: fixed;
-  width: 10%;
+  width: 18%;
 }
 #sidebar div {
   text-align: center;
@@ -157,6 +157,8 @@ img {
 }
 #sidebar {
   visibility: hidden;
+}
+#closeSidebarBtn {
 }
 /* ^ Phone sidebar */
 #phoneSidebar {
