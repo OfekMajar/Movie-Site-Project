@@ -1,4 +1,4 @@
-#searchHeader{
+#searchHeader {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -6,26 +6,25 @@
 #searchSection {
   color: white;
   text-align: center;
-  width: 75%;
-  font-size: 1.9vw;
+  width: 80%;
+  font-size: 15px;
   display: flex;
-  justify-content: space-between;
   padding-left: 2vw;
   align-items: center;
- 
 }
-#searchSection input {
-  background-color: white;
-  border-radius: 5vw;
-  color: black;
-  width: 20vw;
-  height: 75%;
+#searchInputCont {
+  margin-left: 1vw;
+  display: flex;
+  align-items: center;
+}
+#wantedMovieInput {
+  width: 25vw;
+  margin-left: 10px;
 }
 #searchBtn {
-  border-radius: 1vw;
-  color: black;
-  background-color: white;
-  border: 1px solid gray;
-  padding: 1vw;
-  
+  color: white;
+  margin-left: 3vw;
+}
+#searchBtn:hover {
+  cursor: pointer;
 }
