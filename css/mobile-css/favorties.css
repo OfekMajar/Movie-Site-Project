@@ -2,7 +2,7 @@
   color: white;
   display: flex;
   justify-content: space-between;
-  font-size: 2rem;
+  font-size: 18px;
   width: 90%;
   align-items: center;
 }
@@ -10,10 +10,7 @@
   display: flex;
   align-items: center;
 }
-.card {
-  width: 18.5%;
-  height: 10%;
-}
+
 #cardBox {
   color: black;
   display: flex;
@@ -28,5 +25,8 @@
   border-radius: 10vw;
   padding: 1vh;
   color: black;
+  text-align: center;
 }
-#prevPage{visibility: hidden}
+#prevPage {
+  visibility: hidden;
+}

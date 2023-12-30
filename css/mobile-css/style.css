@@ -59,7 +59,7 @@ img {
 }
 /* ^ cards sec */
 .card {
-  width: 40vw;
+  width: 35vw;
   height: fit-content;
 }
 #cardBox {
@@ -78,15 +78,15 @@ img {
   height: max-content;
   display: flex;
   justify-content: center;
-  width: 22vw;
+  width: 30vw;
 }
 .likesBox:hover {
   cursor: pointer;
 }
 .favCardImgs {
   position: relative;
-  transform: scale(0.7);
-  width: 22vw;
+  transform: scale(0.75);
+  width: 30vw;
   z-index: 10;
 }
 .favCardImgs:hover {
@@ -140,7 +140,7 @@ img {
   align-items: center;
   justify-content: space-around;
   background: linear-gradient(to bottom, #000000, #444444);
-  min-height: 100vh;
+  min-height: 100%;
   position: fixed;
   width: 18%;
 }
@@ -157,8 +157,6 @@ img {
 }
 #sidebar {
   visibility: hidden;
-}
-#closeSidebarBtn {
 }
 /* ^ Phone sidebar */
 #phoneSidebar {
