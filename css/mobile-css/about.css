@@ -1,0 +1,48 @@
+body {
+  color: white;
+}
+.main {
+  background-image: none;
+  min-height: 80vh;
+}
+#aboutUsHeader {
+  align-self: flex-start;
+  display: flex;
+  width: 100%;
+  background-color: black;
+  justify-content: center;
+}
+#aboutBanner {
+  height: 200px;
+  background-image: url(../../assets/Images/aboutBanner.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 600px;
+}
+#aboutBanner h2 {
+  font-weight: 600;
+  font-size: 40px;
+  margin-top: 40px;
+  animation: typing 3s steps(40) forwards; /* 3 seconds typing animation */
+}
+
+#aboutBox {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+#aboutPara {
+  padding: 15px 5px 0px 10px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+@keyframes typing {
+  from {
+    width: 40%;
+  }
+  to {
+    width: 100%;
+  }
+}
