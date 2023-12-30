@@ -6,6 +6,10 @@
   flex-direction: column;
   gap: 1vh;
 }
+.main {
+  background-image: none;
+  min-height: 90vh;
+}
 #overlay {
   position: absolute;
   top: 0;
@@ -105,7 +109,7 @@
 /* ! cast List */
 #castSectionBackground {
   background: linear-gradient(to bottom, #070707, #5b5b5b);
-  height: max-content;
+  height: 40vh;
 }
 #castHeader {
   display: flex;
@@ -118,6 +122,7 @@
 #actorsSection {
   position: relative;
   display: flex;
+  padding: 2px;
 }
 #actorsList {
   height: 100%;

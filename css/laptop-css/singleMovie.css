@@ -1,6 +1,10 @@
 * {
   color: white;
 }
+.main {
+  background-image: none;
+  min-height: 90vh;
+}
 #singleMovieBox {
   display: flex;
   flex-direction: column;
@@ -55,9 +59,7 @@
   font-size: 1.8vw;
   font-weight: 600;
 }
-#releaseDate {
-  width: fi;
-}
+
 #movieFacts {
   font-size: 1.8vw;
   display: flex;
@@ -115,12 +117,11 @@
   font-weight: 600;
 }
 #actorsSection {
-  height: 55vh;
   position: relative;
   display: flex;
+  padding: 7px;
 }
 #actorsList {
-  height: 100%;
   display: flex;
   justify-content: space-evenly;
   width: 90%;
@@ -129,7 +130,6 @@
 }
 
 .actorCard {
-  width: 14vw;
   background: white;
   height: max-content;
   padding: 2vw;
@@ -139,6 +139,7 @@
   height: 100%;
 }
 .actorName {
+  max-width: 10vw;
   padding-top: 1vh;
   height: max-content;
   display: flex;
@@ -155,6 +156,7 @@
 }
 .actorImg {
   height: 29vh;
+  width: 10vw;
 }
 #moreActors {
   background-color: white;
