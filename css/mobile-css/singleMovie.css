@@ -26,7 +26,7 @@
 }
 #banner {
   margin-top: 2vh;
-  min-height: 60vh;
+  min-height: 38vh;
   background-size: cover;
   position: relative;
   background-repeat: no-repeat;
@@ -52,14 +52,14 @@
 #movieNameAndYearBox {
   display: flex;
   gap: 10px;
-  font-size: 1.8vw;
+  font-size: 8.7px;
   font-weight: 600;
 }
 #releaseDate {
   width: fi;
 }
 #movieFacts {
-  font-size: 1.8vw;
+  font-size: 8.7px;
   display: flex;
   justify-content: space-between;
   width: max-content;
@@ -81,18 +81,18 @@
 }
 #tagLine {
   color: lightgray;
-  font-size: 1vw;
+  font-size: 7px;
 }
 #overviewHeader {
-  font-size: 1.6vw;
+  font-size: 9px;
 }
 #overViewTextBox {
-  font-size: 1.4vw;
+  font-size: 8px;
 }
 #directorList {
   display: flex;
   gap: 10%;
-  font-size: 1.2vw;
+  font-size: 7px;
 }
 .director {
   display: flex;
@@ -111,11 +111,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2vw;
+  font-size: 10px;
   font-weight: 600;
+  margin-bottom: 5px;
 }
 #actorsSection {
-  height: 55vh;
   position: relative;
   display: flex;
 }
@@ -129,7 +129,7 @@
 }
 
 .actorCard {
-  width: 14vw;
+  width: 20vw;
   background: white;
   height: max-content;
   padding: 2vw;
@@ -144,7 +144,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.5vh;
-  font-size: 1.3vw;
+  font-size: 7px;
 }
 .actorRealName {
   color: black;

@@ -1,4 +1,5 @@
 window.onload = singleMovieFetcher(localStorage.getItem("wantedSingleMovie"));
+
 function singleMovieFetcher(id) {
   const options = {
     method: "GET",
