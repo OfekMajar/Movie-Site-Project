@@ -1,6 +1,9 @@
 * {
   color: white;
 }
+body {
+  background-color: black;
+}
 .main {
   background-image: none;
   min-height: 90vh;
