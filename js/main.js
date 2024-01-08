@@ -1,7 +1,5 @@
 const favoritesArray = JSON.parse(localStorage.getItem("favMovies")) || [];
 let weekOrDayVar;
-//! Not nessecery
-//TODO REMOVE LATER
 function pageLoader(added = 0) {
   document.getElementById("paginationBox").innerHTML = `  <div id="pagination">
   <span id="backToStart" style="display:none">...</span>
@@ -182,4 +180,4 @@ function pagination() {
 }
 
 pagination();
-//^phone js section !//
+
